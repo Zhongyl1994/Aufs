@@ -2,27 +2,24 @@
  * File            : aufs.c
  * Author          : ZhangLe
  * CreateTime      : 2022-08-27 19:35:19
- * LastModified    : 2022-08-27 21:06:48
+ * LastModified    : 2022-08-28 17:07:18
  * Vim             : ts=4, sw=4
  */
 
-//static struct file_system_type au_fs_type = {
-//    .owner = THIS_MODULE,
-//    .name = "zhongylfs",
-//    .get_sb = aufs_get_sb,
-//    .kill_sb = kill_litter_super,
-//};
 #include <linux/init.h>
 #include <linux/module.h>
 #include <linux/kernel.h>
 
+static struct file_system_type au_fs_type = {
+    .name = "aufs",
+};
+
 static int __init aufs_init(void)
 {
-    //int retval;
-    //struct dentry *pslot;
-
-    //retval = register_filesystem(&au_fs_type);
     printk(KERN_INFO "Zhongyl INIT AUFS\n");
+
+    int retval;
+    retval = register_filesystem(&au_fs_type);
     return 0;
 }
 
