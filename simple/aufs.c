@@ -2,7 +2,7 @@
  * File            : aufs.c
  * Author          : ZhangLe
  * CreateTime      : 2022-08-27 19:35:19
- * LastModified    : 2022-08-30 11:10:54
+ * LastModified    : 2022-08-30 17:20:22
  * Vim             : ts=4, sw=4
  */
 
@@ -45,6 +45,7 @@ static struct file_system_type au_fs_type = {
 };
 
 static struct inode *aufs_get_inode(struct super_block* sb, int mode, dev_t dev){
+
     struct inode* inode = new_inode(sb);
 
     if(inode){

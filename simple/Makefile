@@ -2,12 +2,11 @@
 # File            : makefile
 # Author          : ZhangLe
 # CreateTime      : 2022-08-27 20:07:11
-# LastModified    : 2022-08-31 10:02:18
+# LastModified    : 2022-08-29 20:50:35
 # Vim             : ts=4, sw=4
 #
 
-#obj-$(CONFIG_HELLO_FS) += hello.o
-obj-m += hello.o
+obj-m += aufs.o
 EXTRA_CFLAGS += -g
 
 all:
